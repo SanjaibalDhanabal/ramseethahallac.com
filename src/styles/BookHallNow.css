@@ -1,0 +1,209 @@
+/* Modern Datepicker Styles */
+/* Make datepicker full width and match input style */
+.modern-datepicker {
+  border: 1.5px solid #d4b13a;
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 1rem;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  outline: none;
+  background: #fafafa;
+  transition: border 0.2s;
+  display: block;
+  margin-bottom: 0;
+}
+.modern-datepicker:focus {
+  border-color: #bfa233;
+  box-shadow: 0 0 0 2px #f7e7b4;
+}
+
+/* Left-aligned Submit Button */
+.left-align-btn {
+  width: 140px !important;
+  text-align: left !important;
+  display: block;
+  margin-left: 0 !important;
+}
+/* Book Your Hall Now Section Styles (moved from Home.css and Contact.css) */
+
+.book-hall-section {
+  background: #fafafa;
+  padding: 64px 0 64px 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.book-hall-container {
+  display: flex;
+  flex-direction: row;
+  gap: 64px;
+  max-width: 1200px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.book-hall-left {
+  flex: 1 1 492px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 100%;
+  min-height: 379px;
+  max-width: 492px;
+  padding-top: 0;
+  margin-bottom: 0;
+}
+
+.book-hall-left-top {
+  width: 100%;
+}
+
+.book-hall-left-bottom {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  margin-top: auto;
+}
+
+.book-hall-title {
+  font-size: 2rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.book-hall-desc {
+  font-size: 1.2rem;
+  font-family: 'Lato', Arial, sans-serif;
+  color: #222;
+  margin-bottom: 32px;
+}
+
+.book-hall-image {
+  width: 492px;
+  height: 379px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  margin-top: 0;
+  margin-bottom: 0;
+  display: block;
+}
+
+.book-hall-form {
+  flex: 1 1 420px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+  padding: 36px 32px 32px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 380px;
+  max-width: 420px;
+  margin-left: 0;
+  align-items: flex-start;
+  height: 100%;
+  min-height: 379px;
+  justify-content: center;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.form-group label {
+  font-size: 1rem;
+  font-family: 'Lato', Arial, sans-serif;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #222;
+  margin-left: 2px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1.5px solid #d4b13a;
+  font-size: 1rem;
+  font-family: 'Lato', Arial, sans-serif;
+  margin-bottom: 0;
+  background: #fafafa;
+  transition: border 0.2s;
+  display: block;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border: 1.5px solid #bfa12f;
+}
+
+/* Figma-style submit button */
+.book-hall-submit {
+  background: #d4af37;
+  color: #fff;
+  font-size: 1.1rem;
+  font-family: 'Lato', Arial, sans-serif;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 0;
+  width: 140px;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background 0.2s;
+  align-self: stretch;
+  text-align: center;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(212, 175, 55, 0.08);
+}
+
+.book-hall-submit:hover {
+  background: #bfa12f;
+}
+
+@media (max-width: 1100px) {
+  .book-hall-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+  .book-hall-left, .book-hall-form {
+    width: 95vw;
+    max-width: 500px;
+    min-width: unset;
+    height: auto;
+  }
+  .book-hall-form {
+    min-width: unset;
+    max-width: 98vw;
+    padding: 18px 8px 18px 8px;
+    align-items: flex-start;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    min-height: unset;
+  }
+  .form-group {
+    width: 100%;
+  }
+  .book-hall-image {
+    width: 100%;
+    max-width: 400px;
+    height: 180px;
+  }
+}

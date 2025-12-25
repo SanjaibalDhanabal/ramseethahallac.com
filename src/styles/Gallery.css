@@ -1,0 +1,139 @@
+.gallery-container {
+  width: 100%;
+  min-height: 100vh;
+  background: #f8f8f8;
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-content-wrapper {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-hero {
+  position: relative;
+  width: 100%;
+  height: 495px;
+  overflow: hidden;
+}
+
+.gallery-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.7);
+}
+
+.gallery-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.3);
+}
+
+.gallery-overlay h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 50px;
+  font-weight: 700;
+  margin-bottom: 0;
+  letter-spacing: 1px;
+}
+
+/* Memories Section */
+.memories-section {
+  background: #fff;
+  padding: 48px 0 32px 0;
+  text-align: center;
+}
+
+.memories-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
+  font-weight: 400;
+  margin-bottom: 12px;
+}
+
+.memories-section p {
+  font-family: 'lato', Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 32px;
+}
+
+/* Gallery Grid */
+.memories-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 1170px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.memories-item {
+  width: 570px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Two-column images */
+.memories-item img {
+  width: 570px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  display: block;
+}
+
+/* Full width for 3rd and last images */
+.memories-item.full-width {
+  grid-column: 1 / -1;
+  width: 1170px;
+  height: 500px;
+}
+
+
+/* Full-width images */
+.memories-item.full-width img {
+  width: 1170px;
+  height: 500px;
+  object-fit: cover;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .memories-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .memories-item,
+  .memories-item img {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100%;
+  }
+  .memories-item.full-width {
+    grid-column: 1;
+    width: 100% !important;
+    height: auto !important;
+  }
+  .memories-item.full-width img {
+    width: 100% !important;
+    height: auto !important;
+  }
+}
+

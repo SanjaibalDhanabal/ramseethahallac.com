@@ -1,0 +1,136 @@
+/* WhatsApp button white text after submission */
+.enquiry-whatsapp-btn--white {
+  color: #fff !important;
+  background: #25d366;
+  padding: 10px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: bold;
+  margin-top: 12px;
+  transition: background 0.2s;
+}
+
+.enquiry-whatsapp-btn--white:hover {
+  background: #128c7e;
+  color: #fff;
+}
+.enquiry-section {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.enquiry-bg {
+  padding: 48px 0 48px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 458px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+
+.enquiry-bg::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 1;
+}
+
+.enquiry-form {
+  position: relative;
+  z-index: 2;
+  background: transparent;
+  width: 90%;
+  max-width: 1200px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.enquiry-title {
+  color: #fff;
+  font-size: 34px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  margin-bottom: 32px;
+  letter-spacing: 0.5px;
+}
+
+.enquiry-fields {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 32px;
+  border-radius: 10px;
+}
+
+.enquiry-field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 220px;
+  max-width: 300px;
+  width: 100%;
+}
+
+.enquiry-field label {
+  color: #fff;
+  font-size: 24px;
+  font-family: 'Lato', Arial, sans-serif;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.required {
+  color: #ff0000;
+  margin-left: 2px;
+}
+
+.enquiry-field input {
+  width: 275px;
+  height: 50px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  font-family: 'Lato', Arial, sans-serif;
+  margin-bottom: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.enquiry-submit {
+  background: #d4b13a;
+  color: #fff;
+  font-size: 1.2rem;
+  font-family: 'Lato', Arial, sans-serif;
+  font-weight: 500;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 38px;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 12px;
+}
+
+.enquiry-submit:hover {
+  background: #bfa12f;
+}
+
+@media (max-width: 900px) {
+  .enquiry-fields {
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
+  }
+  .enquiry-field {
+    min-width: 180px;
+    max-width: 95vw;
+  }
+}

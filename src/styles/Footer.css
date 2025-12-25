@@ -1,0 +1,137 @@
+html, body, #root {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+#root {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.footer {
+  background: #4a0505;
+  color: #fff;
+  padding: 48px 0 0 0;
+  font-family: 'Poppins', Arial, sans-serif;
+  margin-top: auto;
+}
+.footer-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 40px;
+}
+
+@media (min-width: 900px) {
+  .footer-main {
+    justify-content: center;
+    gap: 0 80px;
+  }
+  .footer-col.links-col.footer-col-center {
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+}
+.footer-col {
+  flex: 1 1 260px;
+  margin-bottom: 32px;
+}
+.logo-col {
+  max-width: 320px;
+}
+.footer-logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.footer-logo-img {
+  height: 48px;
+  width: auto;
+}
+.footer-desc {
+  margin: 10px 0 18px 0;
+  color: #fff;
+  font-size: 1.05rem;
+}
+.footer-socials {
+  display: flex;
+  gap: 12px;
+}
+.footer-social-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  /* background: #fff; */
+  padding: 6px;
+  /* border: 2px solid #e2a93b; */
+  object-fit: contain;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(226,193,75,0.08);
+}
+.footer-socials a:hover .footer-social-icon {
+  /* border-color: #fff; */
+  background: #e2a93b;
+  
+}
+.links-col h4,
+.contact-col h4 {
+  font-size: 1.15rem;
+  margin-bottom: 16px;
+  color: #fff;
+  font-weight: 600;
+}
+.links-col ul,
+.contact-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.links-col ul li,
+.contact-col ul li {
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+.links-col ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.links-col ul li a:hover {
+  color: #e2a93b;
+}
+.footer-icon {
+  margin-right: 8px;
+  vertical-align: middle;
+}
+.footer-contact-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  vertical-align: middle;
+}
+.footer-bottom {
+  text-align: center;
+  background: #4a0505;
+  color: #fff;
+  padding: 18px 0 12px 0;
+  font-size: 0.98rem;
+  margin-top: 12px;
+}
+@media (max-width: 900px) {
+  .footer-main {
+    flex-direction: column;
+    padding: 0 16px;
+  }
+  .footer-col {
+    max-width: 100%;
+    margin-bottom: 28px;
+  }
+}
+
