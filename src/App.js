@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
@@ -10,6 +12,15 @@ import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
 
 function App() {
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 40,
+      easing: 'ease-out-cubic',
+    });
+  }, []);
+
   return (
     <Router>
       <WhatsAppButton />

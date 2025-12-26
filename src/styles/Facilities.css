@@ -42,6 +42,47 @@
   max-width: 800px;
 }
 
+@media (max-width: 767px) {
+  .facilities-hero {
+    height: 300px;
+  }
+  .facilities-overlay h1 {
+    font-size: 28px;
+    padding: 0 16px;
+  }
+  .facilities-overlay p {
+    font-size: 18px;
+    padding: 0 16px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .facilities-overlay h1 {
+    font-size: 36px;
+  }
+  .facilities-overlay p {
+    font-size: 22px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .facilities-overlay h1 {
+    font-size: 42px;
+  }
+  .facilities-overlay p {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .facilities-overlay h1 {
+    font-size: 50px;
+  }
+  .facilities-overlay p {
+    font-size: 28px;
+  }
+}
+
 
 /* 2. Facilities Info Section */
 .facilities-info-section {
@@ -58,6 +99,45 @@
   font-weight: 500;
   color: #222;
   margin-bottom: 36px;
+}
+
+@media (max-width: 767px) {
+  .facilities-info-title {
+    font-size: 24px;
+    padding: 0 16px;
+  }
+  .facilities-info-subtitle {
+    font-size: 18px;
+    padding: 0 16px;
+    margin-bottom: 24px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .facilities-info-title {
+    font-size: 28px;
+  }
+  .facilities-info-subtitle {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .facilities-info-title {
+    font-size: 32px;
+  }
+  .facilities-info-subtitle {
+    font-size: 22px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .facilities-info-title {
+    font-size: 36px;
+  }
+  .facilities-info-subtitle {
+    font-size: 24px;
+  }
 }
 
 
@@ -156,6 +236,52 @@
   text-align: left;
 }
 
+@media (max-width: 767px) {
+  .facilities-cards {
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
+  }
+  .facilities-card {
+    width: 98vw;
+    max-width: 98vw;
+    height: auto;
+    min-height: 420px;
+  }
+  .facilities-card-img {
+    height: 180px;
+    border-radius: 12px 12px 0 0;
+  }
+  .facilities-card-content {
+    padding: 18px 12px 16px 12px;
+    min-height: 120px;
+  }
+  .facilities-card-header {
+    gap: 10px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .facilities-card {
+    width: 45vw;
+    height: 460px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .facilities-card {
+    width: 40vw;
+    height: 480px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .facilities-card {
+    width: 373px;
+    height: 480px;
+  }
+}
+
 
 /* 4. Room Amenities Section (side-by-side layout) */
 .room-amenities-section {
@@ -251,6 +377,70 @@
   margin-left: 0;
 }
 
+@media (max-width: 767px) {
+  .room-amenities-section {
+    width: 100%;
+    max-width: 98vw;
+    margin: 32px auto 0 auto;
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px 12px;
+    border-radius: 12px;
+    background: #f6f3ed;
+    align-items: stretch;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  }
+  .room-amenities-title {
+    font-size: 24px;
+  }
+  .room-amenities-desc {
+    font-size: 18px;
+  }
+  .room-amenities-list li {
+    font-size: 1rem;
+    margin-bottom: 12px;
+  }
+  .room-amenities-icon {
+    width: 28px;
+    height: 28px;
+  }
+  .room-amenities-icon img {
+    width: 14px;
+    height: 14px;
+  }
+  .room-amenities-btn {
+    font-size: 1rem;
+    padding: 12px 28px;
+  }
+  .room-amenities-main-img {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .room-amenities-section {
+    padding: 32px 32px 32px 32px;
+    gap: 24px;
+  }
+  .room-amenities-main-img {
+    width: 450px;
+    height: 220px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .room-amenities-main-img {
+    width: 480px;
+    height: 240px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .room-amenities-main-img {
+    width: 517px;
+    height: 255px;
+  }
+}
 
 /* 5. Facilities Gallery Section */
 .facilities-gallery-section {
@@ -285,51 +475,7 @@
 }
 
 
-@media (max-width: 900px) {
-  .facilities-cards {
-    flex-direction: column;
-    gap: 18px;
-    align-items: center;
-  }
-  .facilities-card {
-    width: 98vw;
-    max-width: 98vw;
-    height: auto;
-    min-height: 420px;
-  }
-  .facilities-card-img {
-    height: 180px;
-    border-radius: 12px 12px 0 0;
-  }
-  .facilities-card-content {
-    padding: 18px 12px 16px 12px;
-    min-height: 120px;
-  }
-  .facilities-card-header {
-    gap: 10px;
-  }
-  .facilities-gallery-grid {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    gap: 18px;
-  }
-  .facilities-gallery-img {
-    height: 180px;
-    border-radius: 12px;
-  }
-  .room-amenities-section {
-    width: 100%;
-    max-width: 98vw;
-    margin: 32px auto 0 auto;
-    flex-direction: column;
-    gap: 24px;
-    padding: 24px 12px;
-    border-radius: 12px;
-    background: #f6f3ed;
-    align-items: stretch;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
-  }
-}
+
 
 
 /* Sticky Footer Layout */
@@ -476,38 +622,46 @@
 } */
 
 
-@media (max-width: 900px) {
-  .facilities-cards {
-    flex-direction: column;
-    gap: 18px;
-    align-items: center;
-  }
-  .facilities-card {
-    width: 98vw;
-    max-width: 98vw;
-    height: auto;
-    min-height: 420px;
-  }
-  .facilities-card-img {
-    height: 180px;
-    border-radius: 12px 12px 0 0;
-  }
-  .facilities-card-content {
-    padding: 18px 12px 16px 12px;
-    min-height: 120px;
-  }
-  .facilities-card-header {
-    gap: 10px;
-  }
+@media (max-width: 767px) {
   .facilities-gallery-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
-    gap: 18px;
+    gap: 20px;
+    padding: 0 16px;
   }
-
   .facilities-gallery-img {
-    height: 180px;
-    border-radius: 12px;
+    width: 100%;
+    height: 150px;
+    max-height: 300px;
+  }
+  .facilities-gallery-title {
+    font-size: 18px;
+    padding: 0 16px;
   }
 }
 
+@media (min-width: 768px) and (max-width: 1023px) {
+  .facilities-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 24px;
+  }
+  .facilities-gallery-img {
+    width: 100%;
+    height: 350px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .facilities-gallery-img {
+    width: 570px;
+    height: 400px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .facilities-gallery-img {
+    width: 570px;
+    height: 450px;
+  }
+}

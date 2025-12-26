@@ -1,3 +1,43 @@
+/* Unique thank you message style for Book Hall Now */
+.book-hall-thankyou-message {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(212, 175, 55, 0.10);
+  padding: 40px 32px 32px 32px;
+  text-align: center;
+  max-width: 420px;
+  margin: 0 auto;
+  color: #222;
+}
+
+.book-hall-thankyou-message h3 {
+  color: #d4af37;
+  font-size: 2rem;
+  margin-bottom: 16px;
+  font-family: 'Playfair Display', serif;
+}
+
+.book-hall-thankyou-message p {
+  font-size: 1.1rem;
+  margin-bottom: 18px;
+}
+
+.book-hall-thankyou-message .book-hall-whatsapp-btn {
+  background: #25d366;
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: background 0.2s;
+  display: inline-block;
+}
+
+.book-hall-thankyou-message .book-hall-whatsapp-btn:hover {
+  background: #128c7e;
+  color: #fff;
+}
 /* Modern Datepicker Styles */
 /* Make datepicker full width and match input style */
 .modern-datepicker {
@@ -178,32 +218,28 @@
   background: #bfa12f;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 767px) {
   .book-hall-container {
     flex-direction: column;
     align-items: center;
     gap: 32px;
+    padding: 0 16px;
   }
   .book-hall-left, .book-hall-form {
-    width: 95vw;
-    max-width: 500px;
-    min-width: unset;
-    height: auto;
-  }
-  .book-hall-form {
-    min-width: unset;
-    max-width: 98vw;
-    padding: 18px 8px 18px 8px;
-    align-items: flex-start;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-    min-height: unset;
-  }
-  .form-group {
+    max-width: 100%;
+    min-width: 100%;
     width: 100%;
+    height: auto;
   }
   .book-hall-image {
     width: 100%;
-    max-width: 400px;
-    height: 180px;
+    /* height: auto; */
+  }
+  .book-hall-form {
+    margin-left: 0;
+    /* margin-top: 150px;
+    margin-bottom: 100px; */
+    padding: 24px 16px 24px 16px;
+    min-height: auto;
   }
 }

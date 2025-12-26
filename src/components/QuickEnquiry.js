@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import "../styles/QuickEnquiry.css"; // Create this file for the styles below
+import Swal from "sweetalert2";
+import "../styles/QuickEnquiry.css";
 
 
 const QuickEnquiry = () => {
@@ -10,11 +11,9 @@ const QuickEnquiry = () => {
     date: ""
   });
   const [submitted, setSubmitted] = useState(false);
-  const [lastSubmitted, setLastSubmitted] = useState(null);
-  const [showWhatsapp, setShowWhatsapp] = useState(false);
+  // WhatsApp number (with country code, no +)
+  const whatsappNumber = "918870888779";
 
-  // User's WhatsApp number (with country code, no +)
-  const whatsappNumber = "918870888779"; // Do not use +
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -22,10 +21,8 @@ const QuickEnquiry = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Save last submitted data for WhatsApp
-    setLastSubmitted({ ...form });
-    // Send to Formspree (new endpoint)
-    const res = await fetch("https://formspree.io/f/mykgvvwv", {
+    // Send to new Formspree endpoint
+    const res = await fetch("https://formspree.io/f/meeqobpk", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -37,23 +34,32 @@ const QuickEnquiry = () => {
       })
     });
     if (res.ok) {
-      setSubmitted(true);
-      setShowWhatsapp(true);
+      // Show SweetAlert2 and on confirm open WhatsApp
+      Swal.fire({
+        title: "Thank you for your enquiry!",
+        text: "We have received your details. Click OK to send your enquiry to WhatsApp for faster response.",
+        icon: "success",
+        confirmButtonText: "Send to WhatsApp"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMsg}`, "_blank");
+        }
+        setSubmitted(true);
+      });
     } else {
-      alert("There was an error submitting the form. Please try again or use WhatsApp.");
+      Swal.fire({
+        title: "Error!",
+        text: "There was an error submitting the form. Please try again.",
+        icon: "error",
+        confirmButtonText: "OK"
+      });
     }
   };
 
-  // Use last submitted data for WhatsApp after submit, otherwise use current form
-  const whatsappData = submitted && lastSubmitted ? lastSubmitted : form;
-  const whatsappMsg = encodeURIComponent(
-    `Quick Enquiry\nName: ${whatsappData.name}\nEmail: ${whatsappData.email}\nPhone: ${whatsappData.phone}\nDate: ${whatsappData.date}`
-  );
 
-  // Open WhatsApp in a new tab
-  const handleWhatsappSend = () => {
-    window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMsg}`, '_blank');
-  };
+  // WhatsApp message formatting
+  const whatsappMsg =
+    `Name: ${form.name}%0aEmail: ${form.email}%0aPhone: ${form.phone}%0aDate: ${form.date}`;
 
   return (
     <section className="enquiry-section">
@@ -94,19 +100,20 @@ const QuickEnquiry = () => {
               Submit
             </button>
           </form>
-        ) : showWhatsapp ? (
-          <div className="enquiry-success">
-            <h3 style={{ color: '#fff', fontSize: '24px', fontFamily: 'Lato, Arial, sans-serif', fontWeight: 800 }}>Thank you for your enquiry!</h3>
-            <p style={{ color: '#fff', fontSize: '16px', fontFamily: 'Lato, Arial, sans-serif', fontWeight: 800 }}>We have received your details. For faster response, you can also send your enquiry to our WhatsApp.</p>
-            <button
-              onClick={handleWhatsappSend}
-              className="enquiry-whatsapp-btn enquiry-whatsapp-btn--white"
-              style={{ display: 'inline-block', marginTop: 16 }}
+        ) : (
+          <div className="enquiry-success quick-enquiry-thankyou-message">
+            <h3>Thank you for your enquiry!</h3>
+            <p>We have received your details. We will contact you soon.</p>
+            <a
+              href={`https://wa.me/${whatsappNumber}?text=${whatsappMsg}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="enquiry-whatsapp-btn"
             >
               Send to WhatsApp
-            </button>
+            </a>
           </div>
-        ) : null}
+        )}
       </div>
     </section>
   );

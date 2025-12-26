@@ -8,7 +8,9 @@ const Footer = () => {
       <div className="footer-main">
         <div className="footer-col logo-col">
           <div className="footer-logo">
-            <img src="/assets/logo/ramseethahalllogo.png" alt="Ramseetha Hall Logo" className="footer-logo-img" />
+            <Link to="/">
+              <img src="/assets/logo/ramseethahalllogo.png" alt="Ramseetha Hall Logo" className="footer-logo-img" />
+            </Link>
           </div>
           <p className="footer-desc">Where every celebration finds its perfect place</p>
           <div className="footer-socials">
@@ -50,13 +52,13 @@ const Footer = () => {
               <span className="footer-icon">
                 <img src="/assets/icons/cell.png" alt="Phone" className="footer-contact-icon" />
               </span>
-              +91 8870888779
+              <a href="tel:+918870888779" className="footer-contact-link">+91 8870888779</a>
             </li>
             <li>
               <span className="footer-icon">
                 <img src="/assets/icons/mail.png" alt="Email" className="footer-contact-icon" />
               </span>
-              ramseethahall@gmail.com
+              <a href="mailto:ramseethahall@gmail.com" className="footer-contact-link">ramseethahall@gmail.com</a>
             </li>
           </ul>
         </div>

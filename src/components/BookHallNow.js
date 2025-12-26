@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Swal from "sweetalert2";
 import "../styles/BookHallNow.css";
 
 const BookHallNow = () => {
@@ -21,8 +22,8 @@ const BookHallNow = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Send to Formspree (user's endpoint)
-    const res = await fetch("https://formspree.io/f/mykgvvwv", {
+    // Send to Formspree endpoint
+    const res = await fetch("https://formspree.io/f/meeqobpk", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -31,13 +32,29 @@ const BookHallNow = () => {
         email: form.email,
         date: form.date,
         type: form.type,
-        message: form.message
+        message: form.message,
+        _replyto: form.email
       })
     });
     if (res.ok) {
-      setSubmitted(true);
+      Swal.fire({
+        title: "Thank you for your enquiry!",
+        text: "We have received your details. Click OK to send your enquiry to WhatsApp for faster response.",
+        icon: "success",
+        confirmButtonText: "Send to WhatsApp"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMsg}`, "_blank");
+        }
+        setSubmitted(true);
+      });
     } else {
-      alert("There was an error submitting the form. Please try again.");
+      Swal.fire({
+        title: "Error!",
+        text: "There was an error submitting the form. Please try again.",
+        icon: "error",
+        confirmButtonText: "OK"
+      });
     }
   };
 
@@ -99,7 +116,7 @@ const BookHallNow = () => {
             <button type="submit" className="book-hall-submit">SUBMIT</button>
           </form>
         ) : (
-          <div className="book-hall-success">
+          <div className="book-hall-success book-hall-thankyou-message">
             <h3>Thank you for your enquiry!</h3>
             <p>We have received your details. For faster response, you can also send your enquiry to our WhatsApp.</p>
             <a

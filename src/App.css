@@ -1,0 +1,10 @@
+/* Highlight selected text as orange or blue */
+::selection {
+  background: #f28500;
+  color: #fff;
+}
+
+::-moz-selection {
+  background: #f28500;
+  color: #fff;
+}

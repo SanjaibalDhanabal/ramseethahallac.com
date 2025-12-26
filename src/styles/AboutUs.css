@@ -1,3 +1,10 @@
+/* Prevent horizontal scroll on all screens */
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
 /* Hero Section */
 .aboutus-hero {
 	position: relative;
@@ -47,6 +54,54 @@
 	background: #f8f8f8;
 	display: flex;
 	flex-direction: column;
+}
+
+@media (max-width: 767px) {
+  .aboutus-hero {
+    height: 300px;
+  }
+  .aboutus-hero-overlay h1 {
+    font-size: 28px;
+    padding: 0 16px;
+  }
+  .aboutus-hero-overlay p {
+    font-size: 20px;
+    padding: 0 16px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .aboutus-hero {
+    height: 400px;
+  }
+  .aboutus-hero-overlay h1 {
+    font-size: 36px;
+    padding: 0 16px;
+  }
+  .aboutus-hero-overlay p {
+    font-size: 24px;
+    padding: 0 16px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .aboutus-hero {
+    height: 450px;
+  }
+  .aboutus-hero-overlay h1 {
+    font-size: 42px;
+    padding: 0 16px;
+  }
+  .aboutus-hero-overlay p {
+    font-size: 26px;
+    padding: 0 16px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .aboutus-hero {
+    height: 495px;
+  }
 }
 
 /* Our Story Section Styles */
@@ -137,15 +192,88 @@
   gap: 40px;
   align-items: center;
 }
-@media (max-width: 900px) {
-  .story-block, .expanded-story-blocks {
-    flex-direction: column !important;
-    gap: 24px;
+
+  @media (max-width: 768px) {
+    .story-block, .expanded-story-blocks {
+      flex-direction: column !important;
+      gap: 24px;
+    }
+    .story-image img {
+      width: 90%;
+      height: 300px;
+    }
+    .story-content {
+      width: 90%;
+      min-width: unset;
+      max-width: unset;
+      height: auto;
+      min-height: unset;
+      max-height: unset;
+      font-size: 24px;
+    }
+    .story-content h2 {
+      font-size: 1.8rem;
+    }
+    .story-content p {
+      font-size: 18px;
+    }
+    .read-more-btn {
+      width: 60%;
+      font-size: 0.9rem;
+    }
   }
+
+@media (min-width: 768px) and (max-width: 1023px) {
   .story-image img {
-    max-width: 100%;
+    width: 100%;
+    max-width: 450px;
+    height: 350px;  
+    max-height: 450px;
+  }
+  .story-content {
+    width: 90%;
+    max-width: 540px;
+    min-width: unset;
+    height: 450px;
+    max-height: 450px;
+    min-height: 450px;
+  }
+} 
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .story-image img {
+    width: 100%;
+    max-width: 500px;
+    height: 400px;  
+    max-height: 500px;
+  }
+  .story-content {
+    width: 90%;
+    max-width: 600px;
+    min-width: unset;
+    height: 500px;
+    max-height: 500px;
+    min-height: 500px;
   }
 }
+
+@media (min-width: 1280px) {
+  .story-image img {
+    width: 480px;
+    max-width: 570px;
+    height: 450px;  
+    max-height: 560px;
+  }
+  .story-content {
+    width: 800px;
+    max-width: 640px;
+    min-width: 765px;
+    height: 560px;
+    max-height: 560px;
+    min-height: 560px;
+  }
+}
+
 
 /* Vision & Mission Section */
 .vision-mission-section {
@@ -193,6 +321,25 @@
 .vision-mission-icon {
   margin-bottom: 18px;
 }
+.vision-mission-card:hover .vision-mission-icon {
+  color: #fff;
+}
+
+/* Ensure icon image is visible on card hover */
+.vision-mission-card:hover .vision-mission-icon img {
+  filter: brightness(0) invert(1);
+  animation: spin 1s linear infinite;
+}
+
+/* @keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} */
+
 .vision-mission-heading {
   font-size: 24px;
   font-family: 'Lato', serif;
@@ -209,16 +356,44 @@
   text-align: center;
   line-height: 1.7;
 }
-@media (max-width: 900px) {
-  .vision-mission-cards {
-    flex-direction: column;
-    gap: 24px;
-    align-items: center;
+
+  @media (max-width: 768px) {
+    .vision-mission-title {
+      font-size: 24px;
+      padding: 0 16px;
+    }
+    .vision-mission-cards {
+      flex-direction: column;
+      gap: 24px;
+      align-items: center;
+    }
+    .vision-mission-card {
+      width: 80%;
+      min-height: 250px;
+    }
+    .vision-mission-text {
+      font-size: 18px;
+    }
   }
-  .vision-mission-card {
-    width: 90vw;
-    min-width: unset;
-    max-width: 400px;
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .vision-mission-card {
+      width: 450px;
+      min-height: 350px;
+    }
   }
-}
+
+  @media (min-width: 1024px) and (max-width: 1279px) {
+    .vision-mission-card {
+      width: 500px;
+      min-height: 400px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .vision-mission-card {
+      width: 570px;
+      min-height: 450px;
+    }
+  }
 

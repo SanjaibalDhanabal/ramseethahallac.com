@@ -85,3 +85,45 @@
   object-fit: contain;
   display: inline-block;
 }
+
+@media (max-width: 767px) {
+  .cta-section {
+    padding: 32px 16px;
+  }
+  .cta-title {
+    font-size: 22px;
+    margin-bottom: 24px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .cta-button {
+    font-size: 1rem;
+    padding: 12px 28px;
+  }
+  .cta-icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .cta-button {
+    font-size: 1.1rem;
+    padding: 13px 32px;
+  }
+  .cta-icon {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .cta-button {
+    font-size: 1.2rem;
+    padding: 14px 38px;
+  }
+  .cta-icon {
+    width: 28px;
+    height: 28px;
+  }
+}

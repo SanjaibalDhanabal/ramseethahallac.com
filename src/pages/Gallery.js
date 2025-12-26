@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import "../styles/Gallery.css";
 import QuickEnquiry from "../components/QuickEnquiry";
 
@@ -19,7 +20,13 @@ const Gallery = () => {
   return (
     <div className="gallery-container">
       <div className="gallery-content-wrapper">
-        <div className="gallery-hero">
+        <motion.div
+          className="gallery-hero"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          viewport={{ once: true }}
+        >
           <img
             src="/assets/images/3.jpeg"
             alt="Gallery Hero"
@@ -28,24 +35,34 @@ const Gallery = () => {
           <div className="gallery-overlay">
             <h1>Gallery</h1>
           </div>
-        </div>
+        </motion.div>
         {/* Memories Section */}
-        <section className="memories-section">
+        <motion.section
+          className="memories-section"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          viewport={{ once: true }}
+        >
           <h2>Memories at Ram Seetha Hall</h2>
           <p>
             Explore the beautiful event setups, décor, and memorable moments hosted at Ram Seetha Marriage Hall
           </p>
           <div className="memories-grid">
             {galleryImages.map((src, idx) => (
-              <div
+              <motion.div
                 className={`memories-item${idx === 2 || idx === galleryImages.length - 1 ? " full-width" : ""}`}
                 key={idx}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: idx * 0.1, ease: 'easeOut' }}
+                viewport={{ once: true }}
               >
                 <img src={src} alt={`Gallery ${idx + 1}`} />
-              </div>
+              </motion.div>
             ))}
           </div>
-        </section>
+        </motion.section>
         {/* Quick Enquiry Section */}
         <QuickEnquiry />
       </div>

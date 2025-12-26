@@ -1,3 +1,4 @@
+// WhatsAppButton component is now hidden and not in use.
 import React from 'react';
 import '../styles/WhatsAppButton.css';
 
