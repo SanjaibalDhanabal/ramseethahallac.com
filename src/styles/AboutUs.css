@@ -315,7 +315,7 @@ html, body {
   cursor: pointer;
 }
 .vision-mission-card:hover {
-  background: #d4af37;
+  background: #fff4d2;
   box-shadow: 0 4px 24px rgba(212, 175, 55, 0.15);
 }
 .vision-mission-icon {

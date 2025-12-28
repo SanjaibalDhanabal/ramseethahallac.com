@@ -82,23 +82,33 @@ const BookHallNow = () => {
         {!submitted ? (
           <form className="book-hall-form" onSubmit={handleSubmit}>
             <div className="form-group">
-              <label>Name</label>
+              <label>
+                Name<span className="required" style={{ color: 'red', fontSize: '20px' }}>*</span>
+              </label>
               <input type="text" name="name" value={form.name} onChange={handleChange} placeholder="Name" required />
             </div>
             <div className="form-group">
-              <label>Mobile Number</label>
+              <label>
+                Mobile Number<span className="required" style={{ color: 'red', fontSize: '20px' }}>*</span>
+              </label>
               <input type="tel" name="mobile" value={form.mobile} onChange={handleChange} placeholder="Enter Mobile Number" required />
             </div>
             <div className="form-group">
-              <label>Email</label>
+              <label>
+                Email<span className="required" style={{ color: 'red', fontSize: '20px' }}>*</span>
+              </label>
               <input type="email" name="email" value={form.email} onChange={handleChange} placeholder="Email Address" required />
             </div>
             <div className="form-group">
-              <label>Function Date</label>
+              <label>
+                Function Date<span className="required" style={{ color: 'red', fontSize: '20px' }}>*</span>
+              </label>
               <input type="date" name="date" value={form.date} onChange={handleChange} placeholder="Pick Your Function date" required />
             </div>
             <div className="form-group">
-              <label>Function Type</label>
+              <label>
+                Function Type<span className="required" style={{ color: 'red', fontSize: '20px' }}>*</span>
+              </label>
               <select name="type" value={form.type} onChange={handleChange} required>
                 <option value="">-Select-</option>
                 <option value="wedding">Wedding</option>
